@@ -45,7 +45,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.amer"
             artifactId = "youtube_player"
-            version = "0.0.2-alpha"
+            version = "0.0.3-alpha"
             artifact("$buildDir/outputs/aar/youtube-player-release.aar")
         }
     }
