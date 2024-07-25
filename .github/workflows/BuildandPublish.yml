@@ -19,6 +19,9 @@ jobs:
           distribution: 'temurin' # Options include: 'adopt', 'zulu', 'temurin', etc
           java-version: '11'
 
+      - name: Set execute permissions for gradlew
+        run: chmod +x gradlew
+
       - name: Verify environment variables
         run: echo "GH_USER=${{ secrets.GH_USER }} GH_TOKEN=${{ secrets.GH_TOKEN }}"
         env:
