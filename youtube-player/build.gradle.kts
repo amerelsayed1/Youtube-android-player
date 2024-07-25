@@ -4,6 +4,8 @@ plugins {
     id("maven-publish")
 }
 
+
+
 android {
     namespace = "com.amer.youtube_player"
     compileSdk = 34
