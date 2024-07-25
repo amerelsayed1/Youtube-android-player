@@ -44,10 +44,22 @@ publishing {
             groupId = "com.amer"
             artifactId = "youtube_player"
             version = "0.0.1-alpha"
-            artifact("${layout.buildDirectory}/outputs/aar/youtube-player-release.aar")
+            artifact("$buildDir/outputs/aar/youtube-player-release.aar")
+        }
+    }
+
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/amerelsayed1/Youtube-android-player")
+            credentials {
+                username = System.getenv("GH_USER") ?: ""
+                password = System.getenv("GH_TOKEN") ?: ""
+            }
         }
     }
 }
+
 
 dependencies {
 
