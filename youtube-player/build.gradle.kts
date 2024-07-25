@@ -54,10 +54,6 @@ publishing {
         maven {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/amerelsayed1/Youtube-android-player")
-            credentials {
-                username = System.getenv("GH_USER") ?: ""
-                password = System.getenv("GH_TOKEN") ?: ""
-            }
         }
     }
 }
