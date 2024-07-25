@@ -1,10 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id("maven-publish")
+    id("com.vanniktech.maven.publish")
 }
-
-
 
 android {
     namespace = "com.amer.youtube_player"
@@ -39,32 +37,43 @@ android {
     }
 }
 
-
-publishing {
-    publications {
-        register<MavenPublication>("release") {
-            groupId = "com.amer"
-            artifactId = "youtube_player"
-            version = "0.0.3-alpha"
-            artifact("$buildDir/outputs/aar/youtube-player-release.aar")
-        }
-    }
-
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/amerelsayed1/Youtube-android-player")
-        }
-    }
-}
-
-
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+
+
+mavenPublishing {
+    publishToMavenCentral()
+    signAllPublications()
+
+    coordinates("com.amer.youtube-player", "youtube-player", "0.0.1")
+
+    pom {
+        name.set("YouTube Player Library")
+        description.set("This library provides a customizable YouTube player for Android.")
+        url.set("https://github.com/amerelsayed1/Youtube-android-player")
+        licenses {
+            license {
+                name.set("MIT License")
+                url.set("https://github.com/GeofriendTech/AndroidUtils/blob/main/LICENSE")
+            }
+        }
+        developers {
+            developer {
+                id.set("Amer Elsayed")
+                name.set("amer elsayed")
+                email.set("amer.mahsoub1@gmail.com")
+            }
+        }
+        scm {
+            connection.set("scm:git@github.com:amerelsayed1/Youtube-android-player.git")
+            developerConnection.set("scm:git@github.com:amerelsayed1/Youtube-android-player.git")
+            url.set("https://github.com/amerelsayed1/Youtube-android-player")
+        }
+    }
 }
