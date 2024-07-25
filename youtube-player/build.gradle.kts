@@ -4,6 +4,8 @@ plugins {
     id("maven-publish")
 }
 
+
+
 android {
     namespace = "com.amer.youtube_player"
     compileSdk = 34
@@ -43,7 +45,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.amer"
             artifactId = "youtube_player"
-            version = "0.0.2-alpha"
+            version = "0.0.3-alpha"
             artifact("$buildDir/outputs/aar/youtube-player-release.aar")
         }
     }
@@ -52,10 +54,6 @@ publishing {
         maven {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/amerelsayed1/Youtube-android-player")
-            credentials {
-                username = System.getenv("GH_USER") ?: ""
-                password = System.getenv("GH_TOKEN") ?: ""
-            }
         }
     }
 }
