@@ -1,4 +1,4 @@
-package com.amer.youtube_player.utils
+package me.amermahsoub.youtube_player.utils
 
 import android.webkit.WebResourceError
 import android.webkit.WebResourceRequest

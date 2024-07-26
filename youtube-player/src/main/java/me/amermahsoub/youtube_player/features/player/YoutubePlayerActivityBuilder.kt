@@ -1,9 +1,9 @@
-package com.amer.youtube_player.features.player
+package me.amermahsoub.youtube_player.features.player
 
 
 import android.content.Context
 import android.content.Intent
-import com.amer.youtube_player.utils.Constants
+import me.amermahsoub.youtube_player.utils.Constants
 
 class YoutubePlayerActivityBuilder(private val context: Context) {
 

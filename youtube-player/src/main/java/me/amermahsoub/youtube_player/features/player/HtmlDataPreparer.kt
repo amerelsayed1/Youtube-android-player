@@ -1,7 +1,8 @@
-package com.amer.youtube_player.features.player
+package me.amermahsoub.youtube_player.features.player
 
 import android.content.res.Resources
-import com.amer.youtube_player.R
+import me.amermahsoub.youtube_player.R
+
 
 object HtmlDataPreparer {
 

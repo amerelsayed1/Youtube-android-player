@@ -1,11 +1,14 @@
+import com.vanniktech.maven.publish.SonatypeHost
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("com.vanniktech.maven.publish")
+    id("com.gradleup.nmcp")
 }
 
 android {
-    namespace = "com.amer.youtube_player"
+    namespace = "me.amermahsoub.youtube_player"
     compileSdk = 34
 
     defaultConfig {
@@ -48,10 +51,7 @@ dependencies {
 
 
 mavenPublishing {
-    publishToMavenCentral()
-    signAllPublications()
-
-    coordinates("com.amer.youtube-player", "youtube-player", "0.0.1")
+    coordinates("me.amermahsoub", "youtube-player-release", "0.0.1-alpha")
 
     pom {
         name.set("YouTube Player Library")
@@ -65,7 +65,7 @@ mavenPublishing {
         }
         developers {
             developer {
-                id.set("Amer Elsayed")
+                id.set("AmerMahsoub")
                 name.set("amer elsayed")
                 email.set("amer.mahsoub1@gmail.com")
             }
@@ -76,4 +76,7 @@ mavenPublishing {
             url.set("https://github.com/amerelsayed1/Youtube-android-player")
         }
     }
+
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+    signAllPublications()
 }
