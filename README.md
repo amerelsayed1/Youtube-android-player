@@ -36,15 +36,15 @@ allprojects {
 
 1. **Android Manifest:**
 
-To use the Youtube Android Player in your project, you need to declare the `YoutubePlayerActivity` in your AndroidManifest.xml file:
+   To use the Youtube Android Player in your project, you need to declare the `YoutubePlayerActivity` in your AndroidManifest.xml file:
 
-```xml
-<activity
-    android:name="me.amermahsoub.youtube_player.features.player.YoutubePlayerActivity"
-    android:exported="true"
-    android:screenOrientation="portrait"
-    android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-```
+   ```xml
+   <activity
+       android:name="me.amermahsoub.youtube_player.features.player.YoutubePlayerActivity"
+       android:exported="true"
+       android:screenOrientation="portrait"
+       android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+   ```
 2. **Initialize the Player:**
 
    In your activity or fragment, initialize the player with a YouTube video URL.
