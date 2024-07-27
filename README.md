@@ -1,7 +1,7 @@
 
 # Youtube Android Player
 
-[![Maven Central](https://img.shields.io/maven-central/v/me.amermahsoub/youtube-player)](https://search.maven.org/artifact/me.amermahsoub/youtube-player)
+[![Maven Central](https://img.shields.io/maven-central/v/me.amermahsoub/youtube-player-release)](https://central.sonatype.com/artifact/me.amermahsoub/youtube-player-release/overview)
 
 Youtube Android Player is a simple library to integrate YouTube video playback in your Android application. This library provides a seamless way to play YouTube videos using a native Android experience.
 
@@ -34,7 +34,19 @@ allprojects {
 
 ## Usage
 
-1. **Initialize the Player:**
+1. **Android Manifest:**
+
+To use the Youtube Android Player in your project, you need to declare the `YoutubePlayerActivity` in your AndroidManifest.xml file:
+
+```xml
+<activity
+    android:name="me.amermahsoub.youtube_player.features.player.YoutubePlayerActivity"
+    android:exported="true"
+    android:screenOrientation="portrait"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+```
+
+2. **Initialize the Player:**
 
    In your activity or fragment, initialize the player with a YouTube video URL.
 
@@ -43,7 +55,7 @@ allprojects {
    YoutubePlayerActivity.start(this, videoUrl)
    ```
 
-2. **Customization:**
+3. **Customization:**
 
    You can customize the player controls and behavior by modifying the `YoutubePlayerActivity` or extending it in your project.
 
@@ -67,3 +79,5 @@ Contributions are welcome! Please feel free to submit a pull request or open an 
 ## Contact
 
 For any questions or suggestions, feel free to reach out at [amer.mahsoub1@gmail.com](mailto:amer.mahsoub1@gmail.com).
+
+Make sure to customize the activity's theme and other attributes as needed for your application.
