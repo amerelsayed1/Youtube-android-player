@@ -1,5 +1,6 @@
 import com.vanniktech.maven.publish.SonatypeHost
 
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -38,6 +39,18 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    libraryVariants.all {
+        outputs.all {
+            val variantName = name // Variant name, e.g., "release" or "debug"
+            val versionName = "0.0.1" // Assumes you have set version in the project
+            val suffix = "-alpha" // Change this as per your release status
+
+            val output = this as com.android.build.gradle.internal.api.BaseVariantOutputImpl
+            output.outputFileName = "youtube-player-$variantName-$versionName$suffix.aar"
+        }
+    }
+
 }
 
 dependencies {
@@ -52,6 +65,7 @@ dependencies {
 
 mavenPublishing {
     coordinates("me.amermahsoub", "youtube-player-release", "0.0.1-alpha")
+
 
     pom {
         name.set("YouTube Player Library")
@@ -79,4 +93,6 @@ mavenPublishing {
 
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
     signAllPublications()
+
 }
+
