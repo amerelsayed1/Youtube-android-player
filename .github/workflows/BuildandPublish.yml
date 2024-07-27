@@ -34,8 +34,8 @@ jobs:
           GH_USER: ${{ secrets.GH_USER }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: Publish to GitHub Packages
-        run: ./gradlew publish
-        env:
-          GH_USER: ${{ secrets.GH_USER }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+ #     - name: Publish to GitHub Packages
+ #       run: ./gradlew publish
+ #       env:
+ #         GH_USER: ${{ secrets.GH_USER }}
+ #         GH_TOKEN: ${{ secrets.GH_TOKEN }}

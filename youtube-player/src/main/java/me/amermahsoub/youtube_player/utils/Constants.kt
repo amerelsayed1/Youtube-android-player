@@ -1,4 +1,4 @@
-package com.amer.youtube_player.utils
+package me.amermahsoub.youtube_player.utils
 
 object Constants {
     final val VIDEO_ID = "VIDEO_ID"

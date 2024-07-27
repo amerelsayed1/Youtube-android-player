@@ -1,7 +1,7 @@
-package com.amer.youtube_player.features.player
+package me.amermahsoub.youtube_player.features.player
 
 import android.webkit.WebView
-import com.amer.youtube_player.utils.CustomClient
+import me.amermahsoub.youtube_player.utils.CustomClient
 
 object WebViewSetupHelper {
 

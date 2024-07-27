@@ -3,7 +3,7 @@ package com.amer.android_youtube_player
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.amer.youtube_player.features.player.YoutubePlayerActivityBuilder
+import me.amermahsoub.youtube_player.features.player.YoutubePlayerActivityBuilder
 
 class MainActivity : AppCompatActivity() {
 

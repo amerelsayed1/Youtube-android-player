@@ -1,81 +1,69 @@
 
 # Youtube Android Player
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Maven Central](https://img.shields.io/maven-central/v/me.amermahsoub/youtube-player)](https://search.maven.org/artifact/me.amermahsoub/youtube-player)
 
-Youtube Android Player is an Android library that provides a simple way to integrate YouTube video playback into your Android applications. This library leverages WebView to display YouTube videos and provides options to customize the playback experience.
+Youtube Android Player is a simple library to integrate YouTube video playback in your Android application. This library provides a seamless way to play YouTube videos using a native Android experience.
 
 ## Features
 
-- **Easy Integration**: Quickly add YouTube video playback to your app.
-- **Customizable UI**: Control the visibility of player controls, set custom dimensions, and more.
-- **Lightweight**: Minimal overhead for seamless integration.
+- Play YouTube videos in your app with minimal effort.
+- Customizable video playback controls.
+- Lightweight and easy to integrate.
 
-## Getting Started
+## Installation
 
-### Installation
+Add the following dependency to your `build.gradle` file:
 
-To include the Youtube Android Player in your project, add the following to your `build.gradle` file:
-
-**Using GitHub Packages:**
-
-1. Add the GitHub Packages repository to your project:
-
-   ```kotlin
-   repositories {
-       maven {
-           url = uri("https://maven.pkg.github.com/amerelsayed1/Youtube-android-player")
-           credentials {
-               username = System.getenv("GITHUB_USER")
-               password = System.getenv("GITHUB_TOKEN")
-           }
-       }
-   }
-   ```
-
-2. Add the dependency:
-
-   ```kotlin
-   dependencies {
-       implementation("com.amer.youtube_player:youtube_player:0.0.1-alpha")
-   }
-   ```
-
-### Usage
-
-#### 1. Initialize the Player
-
-To start a video, use the `YoutubePlayerActivityBuilder`:
-
-```kotlin
-val intent = YoutubePlayerActivityBuilder(this)
-    .setVideoId("your_video_id")
-    .setShowControls(true)
-    .setWidth(640)
-    .setHeight(360)
-    .build()
-
-startActivity(intent)
+```gradle
+dependencies {
+    implementation 'me.amermahsoub:youtube-player:0.0.1-alpha'
+}
 ```
 
-- **`videoId`**: The ID of the YouTube video to play.
-- **`showControls`**: Boolean to show or hide player controls.
-- **`width`** and **`height`**: Custom dimensions for the player.
+Make sure to include the Maven Central repository in your project-level `build.gradle` file:
 
-#### 2. Customization
+```gradle
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+```
 
-You can customize the player further using the provided methods in the builder.
+## Usage
 
-## Contributing
+1. **Initialize the Player:**
 
-Contributions are welcome! Please open an issue or submit a pull request with your improvements or bug fixes.
+   In your activity or fragment, initialize the player with a YouTube video URL.
+
+   ```kotlin
+   val videoUrl = "https://www.youtube.com/watch?v=VIDEO_ID"
+   YoutubePlayerActivity.start(this, videoUrl)
+   ```
+
+2. **Customization:**
+
+   You can customize the player controls and behavior by modifying the `YoutubePlayerActivity` or extending it in your project.
+
+## ProGuard Rules
+
+If you are using ProGuard, add the following rules to your `proguard-rules.pro` file:
+
+```
+-keep class com.google.android.youtube.player.** { *; }
+-dontwarn com.google.android.youtube.player.**
+```
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/amerelsayed1/Youtube-android-player/blob/publish_to_maven/LICENSE) file for details.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a pull request or open an issue.
 
 ## Contact
 
-For questions or suggestions, feel free to open an issue or contact the project maintainer:
-
-- GitHub: [amerelsayed1](https://github.com/amerelsayed1)
+For any questions or suggestions, feel free to reach out at [amer.mahsoub1@gmail.com](mailto:amer.mahsoub1@gmail.com).

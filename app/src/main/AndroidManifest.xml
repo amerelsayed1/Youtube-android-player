@@ -25,7 +25,7 @@
         </activity>
 
         <activity
-            android:name="com.amer.youtube_player.features.player.YoutubePlayerActivity"
+            android:name="me.amermahsoub.youtube_player.features.player.YoutubePlayerActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
