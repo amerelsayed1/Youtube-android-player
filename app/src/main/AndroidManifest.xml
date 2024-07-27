@@ -27,7 +27,7 @@
         <activity
             android:name="me.amermahsoub.youtube_player.features.player.YoutubePlayerActivity"
             android:exported="true"
-            android:screenOrientation="portrait"
+            android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
     </application>
