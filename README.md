@@ -5,7 +5,6 @@
 
 Youtube Android Player is a simple library to integrate YouTube video playback in your Android application. This library provides a seamless way to play YouTube videos using a native Android experience.
 
-[Watch the demo]
 <img src="shots/demo.gif" alt="ArchiTecture"/>
 
 ## Features
