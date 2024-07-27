@@ -45,20 +45,17 @@ To use the Youtube Android Player in your project, you need to declare the `Yout
     android:screenOrientation="portrait"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 ```
-
 2. **Initialize the Player:**
 
    In your activity or fragment, initialize the player with a YouTube video URL.
 
    ```kotlin
-   val videoUrl = "https://www.youtube.com/watch?v=VIDEO_ID"
-   YoutubePlayerActivity.start(this, videoUrl)
+    val intent = YoutubePlayerActivityBuilder(this)
+            .setVideoId("FqtpJbMEN5Q")
+            .setShowControls(true)
+            .build()
+   startActivity(intent)
    ```
-
-3. **Customization:**
-
-   You can customize the player controls and behavior by modifying the `YoutubePlayerActivity` or extending it in your project.
-
 ## ProGuard Rules
 
 If you are using ProGuard, add the following rules to your `proguard-rules.pro` file:
