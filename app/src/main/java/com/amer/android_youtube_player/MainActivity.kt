@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val intent = YoutubePlayerActivityBuilder(this)
-            .setVideoId("x91MPoITQ3I")
+            .setVideoId("gnpyIbK-Y78")
             .setShowControls(true)
             .build()
 
