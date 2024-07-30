@@ -1,0 +1,41 @@
+name: Build and Publish
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  build:
+    if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'master'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin' # Options include: 'adopt', 'zulu', 'temurin 17', etc
+          java-version: '17'
+
+      - name: Set execute permissions for gradlew
+        run: chmod +x gradlew
+
+      - name: Verify environment variables
+        run: echo "GH_USER=${{ secrets.GH_USER }} GH_TOKEN=${{ secrets.GH_TOKEN }}"
+        env:
+          GH_USER: ${{ secrets.GH_USER }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: Build with Gradle
+        run: ./gradlew build
+        env:
+          GH_USER: ${{ secrets.GH_USER }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+ #     - name: Publish to GitHub Packages
+ #       run: ./gradlew publish
+ #       env:
+ #         GH_USER: ${{ secrets.GH_USER }}
+ #         GH_TOKEN: ${{ secrets.GH_TOKEN }}
