@@ -57,14 +57,11 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
 }
 
 
 mavenPublishing {
-    coordinates("me.amermahsoub", "youtube-player-release", "0.0.1-alpha")
+    coordinates("me.amermahsoub", "youtube-player", "0.0.2-alpha")
 
 
     pom {
